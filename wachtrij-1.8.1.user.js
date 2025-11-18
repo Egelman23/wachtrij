@@ -89,5 +89,5 @@
       }
     }
   
-    let wachtrijinterval = setInterval(add_button, 200);
+    let wachtrijinterval = setInterval(add_main_button, 200);
   })();
