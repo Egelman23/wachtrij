@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name         wachtrij
-// @version      2.1.0
+// @version      2.1.1
 // @description  shows troops in queue for all cities
 // @author       Miro
 // @include      https://*.grepolis.com/game/*
 // @grant        none
+// @namespace https://greasyfork.org/users/984383
+// @downloadURL https://update.greasyfork.org/scripts/477181/wachtrij.user.js
+// @updateURL https://update.greasyfork.org/scripts/477181/wachtrij.meta.js
 // ==/UserScript==
 
 (async function () {
@@ -89,5 +92,7 @@
       }
     }
   
-    let wachtrijinterval = setInterval(add_main_button, 200);
+    let wachtrijinterval = setInterval(add_button, 200);
+
+    add_main_button();
   })();
