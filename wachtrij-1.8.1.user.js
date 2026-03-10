@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         wachtrij
-// @version      2.1.1
+// @version      2.2.1
 // @description  shows troops in queue for all cities
 // @author       Miro
 // @include      https://*.grepolis.com/game/*
@@ -93,6 +93,15 @@
     }
   
     let wachtrijinterval = setInterval(add_button, 200);
-
     add_main_button();
+
+    // Poll every 5 minutes to keep troop queue data fresh
+    setInterval(() => {
+        try {
+            unitlist = get_units();
+        } catch {
+            console.log("No troops in queue (poll)");
+            unitlist = [];
+        }
+    }, 5 * 60 * 1000);
   })();
